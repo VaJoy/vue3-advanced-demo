@@ -1,0 +1,24 @@
+{
+  "name": "vue3-advanced-demo",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "team-red",
+    "team-blue",
+    "team-green"
+  ],
+  "scripts": {
+    "start": "pnpm start",
+    "build": "pnpm --parallel --filter \"./**\" build ",
+    "serve": "pnpm --parallel --filter \"./**\" serve ",
+    "restart": "pnpm stop & pnpm build & pnpm serve",
+    "stop": "kill-port --port 5001,5002,5003",
+    "clean": "pnpm run clean"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "workspace:1.1.12",
+    "kill-port": "^2.0.1",
+    "vite-plugin-css-injected-by-js": "^2.1.0"
+  },
+  "license": "MulanPSL2"
+}
